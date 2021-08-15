@@ -32,4 +32,6 @@ jobs:
             - name: Run Some Commands
               run: |
                   ls -a
-                  cd gh_actions_test
+                  cd backend
+                  npm install
+                  pm2 start index.js --name "test_backend"
