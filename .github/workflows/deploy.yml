@@ -19,7 +19,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
       with:
         source: "."
-        target: "/var/www/mywebsite"
+        target: "/home/bf/gh_actions_test"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
@@ -31,5 +31,10 @@ jobs:
         script: |
         ls
         cd backend
+      
+    - name: Release
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+      run: |
         npm install
-        node index.js
