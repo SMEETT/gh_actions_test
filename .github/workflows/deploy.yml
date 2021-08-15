@@ -30,7 +30,6 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
         script: |
         ls
-        cd backend
       
     - name: Release
     - uses: actions/setup-node@v1
