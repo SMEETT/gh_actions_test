@@ -36,12 +36,12 @@ jobs:
                   USERNAME: ${{ secrets.USERNAME }}
                   PORT: ${{ secrets.PORT }}
                   KEY: ${{ secrets.SSHKEY }}
-              script: |
-                  ls -a
-                  cd backend
-                  npm install
-                  pm2 start index.js --name "test_backend"
-                  cd ..
-                  ls
-                  cd frontend
-                  ls
+                  script: |
+                      ls -a
+                      cd backend
+                      npm install
+                      pm2 start index.js --name "test_backend"
+                      cd ..
+                      ls
+                      cd frontend
+                      ls
