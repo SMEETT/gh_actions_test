@@ -30,13 +30,40 @@ jobs:
                   KEY: ${{ secrets.SSHKEY }}
                   script: |
                       cd /home/bf/gh_actions_test/backend
+                      echo "----------------------"
+                      echo Installing backend dependencies
+                      echo "----------------------"
                       npm install
+                      echo "----------------------"
+                      echo Backend dependencies done
+                      echo "----------------------"
+                      echo "----------------------"
+                      echo Starting Backend via PM2
+                      echo "----------------------"
                       pm2 start /home/bf/gh_actions_test/backend/index.js --name "test_backend"
                       cd /home/bf/gh_actions_test/frontend
+                      echo "----------------------"
+                      echo Installing backend dependencies
+                      echo "----------------------"
                       npm install --production=false
+                      echo "----------------------"
+                      echo Frontend dependencies done
+                      echo "----------------------"
+                      echo "----------------------"
+                      echo Starting Frontend build
+                      echo "----------------------"
                       npm run build
+                      echo "----------------------"
+                      echo Frontend build done
+                      echo "----------------------"
                       pm2 delete test_frontend
+                      echo "----------------------"
+                      echo Starting Frontend via PM2
+                      echo "----------------------"
                       pm2 start npm --name "test_frontend" -- run serve
                       pm2 restart test_backend
                       pm2 restart test_frontend
                       pm2 save
+                      echo "----------------------"
+                      echo All done :)
+                      echo "----------------------"
