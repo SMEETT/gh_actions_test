@@ -31,7 +31,7 @@ jobs:
                   script: |
                       cd /home/bf/gh_actions_test/backend
                       npm install
-                      pm2 start /home/bf/gh_actions_test/index.js --name "test_backend"
+                      pm2 start /home/bf/gh_actions_test/backend/index.js --name "test_backend"
                       cd /home/bf/gh_actions_test/frontend
                       npm install --production=false
                       npm run build
