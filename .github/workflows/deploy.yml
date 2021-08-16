@@ -28,6 +28,4 @@ jobs:
                   USERNAME: ${{ secrets.USERNAME }}
                   PORT: ${{ secrets.PORT }}
                   KEY: ${{ secrets.SSHKEY }}
-                  script: | 
-                  ls
-                  sh ./deploy.sh
+                  script: sh /home/bf/gh_actions_test/deploy.sh
