@@ -19,7 +19,7 @@ jobs:
                   KEY: ${{ secrets.SSHKEY }}
               with:
                   source: "."
-                  target: "/home/bf/gh_actions_test"
+                  target: "/home/node/gh_actions_test"
 
             - name: Run Deploy-Script
               uses: appleboy/ssh-action@master
@@ -28,4 +28,4 @@ jobs:
                   USERNAME: ${{ secrets.USERNAME }}
                   PORT: ${{ secrets.PORT }}
                   KEY: ${{ secrets.SSHKEY }}
-                  script: sh /home/bf/gh_actions_test/deploy_script.sh
+                  script: sh /home/node/gh_actions_test/deploy_script.sh
