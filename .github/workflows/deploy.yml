@@ -35,3 +35,5 @@ jobs:
                   cd backend
                   npm install
                   pm2 start index.js --name "test_backend"
+                  cd ..
+                  ls
