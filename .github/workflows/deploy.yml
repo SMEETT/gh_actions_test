@@ -36,7 +36,7 @@ jobs:
                   USERNAME: ${{ secrets.USERNAME }}
                   PORT: ${{ secrets.PORT }}
                   KEY: ${{ secrets.SSHKEY }}
-              run: |
+              script: |
                   ls -a
                   cd backend
                   npm install
