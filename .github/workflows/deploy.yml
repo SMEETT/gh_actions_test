@@ -37,3 +37,5 @@ jobs:
                   pm2 start index.js --name "test_backend"
                   cd ..
                   ls
+                  cd frontend
+                  ls
