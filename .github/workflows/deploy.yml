@@ -51,3 +51,4 @@ jobs:
                       pm2 start npm --name "test_frontend" -- run serve
                       pm2 restart test_backend
                       pm2 restart test_frontend
+                      pm2 save
