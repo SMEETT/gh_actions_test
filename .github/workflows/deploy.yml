@@ -47,7 +47,7 @@ jobs:
                       cd frontend
                       npm install --production=false
                       npm run build
+                      pm2 delete test_frontend
                       pm2 start npm --name "test_frontend" -- run serve
                       pm2 restart test_backend
                       pm2 restart test_frontend
-                      ls
