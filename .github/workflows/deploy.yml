@@ -38,14 +38,10 @@ jobs:
                   PORT: ${{ secrets.PORT }}
                   KEY: ${{ secrets.SSHKEY }}
                   script: |
-                      ls -a
-                      cd gh_actions_test
-                      cd backend
+                      cd /home/bf/gh_actions_test/backend
                       npm install
-                      pm2 start index.js --name "test_backend"
-                      cd ..
-                      ls
-                      cd frontend
+                      pm2 start /home/bf/gh_actions_test/index.js --name "test_backend"
+                      cd /home/bf/gh_actions_test/frontend
                       npm install --production=false
                       npm run build
                       pm2 delete test_frontend
